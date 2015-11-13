@@ -2533,11 +2533,7 @@ static void exfat_debug_kill_sb(struct super_block *sb)
 
 static struct file_system_type exfat_fs_type = {
 	.owner       = THIS_MODULE,
-#if defined(CONFIG_MACH_LGE) || defined(CONFIG_HTC_BATT_CORE)
-	.name        = "texfat",
-#else
 	.name        = "exfat",
-#endif
 #if LINUX_VERSION_CODE < KERNEL_VERSION(2,6,37)
 	.get_sb      = exfat_get_sb,
 #else
@@ -2592,9 +2588,5 @@ module_exit(exit_exfat);
 MODULE_LICENSE("GPL");
 MODULE_DESCRIPTION("exFAT Filesystem Driver");
 #ifdef MODULE_ALIAS_FS
-#if defined(CONFIG_MACH_LGE) || defined(CONFIG_HTC_BATT_CORE)
-MODULE_ALIAS_FS("texfat");
-#else
 MODULE_ALIAS_FS("exfat");
-#endif
 #endif
