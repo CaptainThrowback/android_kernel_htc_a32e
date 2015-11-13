@@ -7378,8 +7378,7 @@ static int himax8528_probe(struct i2c_client *client, const struct i2c_device_id
 	}
 	
 	
-	if ((strcmp(htc_get_bootmode(), "offmode_charging") ==0)  ||
-	    (strcmp(htc_get_bootmode(), "recovery") == 0)) {
+	if (strcmp(htc_get_bootmode(), "offmode_charging") == 0) {
 		I(" %s: offmode charging. Set touch chip to sleep mode and skip touch driver probe\n", __func__);
 		
 		buf[0] = HX_CMD_TSSOFF;

@@ -5652,8 +5652,7 @@ himax_gpio_power_config(ts->client, pdata);
 		goto err_ic_package_failed;
 	}
 
-    if((strcmp(htc_get_bootmode(), "offmode_charging") == 0) ||
-	(strcmp(htc_get_bootmode(), "recovery") == 0)){
+    if (strcmp(htc_get_bootmode(), "offmode_charging") == 0) {
 	I("%s: %s mode. Set touch chip to sleep mode and skip touch driver probe\n",
 	__func__, htc_get_bootmode());
 	buf[0] = HX_CMD_TSSOFF;
