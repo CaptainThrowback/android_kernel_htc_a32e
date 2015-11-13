@@ -154,8 +154,6 @@ static struct android_usb_platform_data android_usb_pdata = {
 	.diag_client_interface		= "diag",
 	.fserial_init_string		= "smd:modem,tty,tty:autobot,tty:serial,tty:autobot,tty:acm",
 	.nluns 				= 1,
-	.cdrom_lun 			= 0x1,
-	.vzw_unmount_cdrom 		= 0,
 };
 
 #define QCT_ANDROID_USB_REGS 0x086000c8
